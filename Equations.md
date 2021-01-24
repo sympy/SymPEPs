@@ -54,7 +54,7 @@ is used on equations or lists of equations.
 _Applications of methods_
 * Support `.method()` calls for any method that applies to expressions. Apply the method
 to both sides of the equation.
-* Support `.apply()`, `.applyrhs()`, `.applyrhs()`, `.do.`, `.dolhs.`,`.dorhs.`.
+* Support `.apply()`, `.applylhs()`, `.applyrhs()`, `.do.`, `.dolhs.`,`.dorhs.`.
 * Methods that can be applied to a SymPy expression as a Python method should also work
 on an Equation:
 ```
