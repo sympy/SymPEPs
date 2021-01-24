@@ -11,6 +11,7 @@ operations on the equations should be initiated using syntax mimicking standard
 mathematical notation.
 
 __Proposed Behaviors__
+
 _Binary Operations (+,-, *, /, %, **)_
 * If combining an equation with a SymPy expression the expression will be applied to both
 sides of the equation as specified by the binary operator.
