@@ -31,3 +31,39 @@ b = c**2
 >>> eq1 + eq2
 a + b = b/c + c**2
 ```
+_Functions (sin, cos, exp, etc...)_
+* Functions will apply to both sides.
+```
+>>> cos(eq1)
+cos(a) = cos(b/c)
+```
+* Keywords and additional parameters will be passed through to the function.
+
+_Simplification_
+* Behavior should mimic the behavior for expressions and default to applying to both sides.
+
+_Differentiation_
+
+_Integration_
+
+_Solve_
+* Solve should accept equations and lists of equations and return equations or lists of
+equations as solutions. To avoid breaking past behavior this should only occur when solve
+is used on equations or lists of equations.
+
+_Applications of methods_
+* Support `.apply()`, `.applyrhs()`, `.applyrhs()`, `.do.`, `.dolhs.`,`.dorhs.`.
+* Methods that can be applied to a SymPy expression as a Python method should also work
+on an Equation:
+```
+>>> collect(a*x + b*x**2 + c*x, x)
+(a + c)*x + b*x**2
+>>> collect(Equation(a*x + b*x**2 + c*x,a*x**2 + b*x + c*x, x)
+(a + c)*x + b*x**2 = a*x**2 + (b + c)*x
+```
+_Miscellaneous_
+* `.as_Boolean()` returns the equation cast as an `Equality`.
+* `.lhs` returns the expression on the left hand side.
+* `.rhs` returns the expression on the right hand side.
+* `.swap` returns the equation with the lhs and rhs swapped.
+* `.check()` shortcut for `.as_Boolean().simplify()`.
