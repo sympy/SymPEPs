@@ -45,6 +45,16 @@ _Simplification_
 _Differentiation_
 
 _Integration_
+* Support integration of each side through `.doXXX.integrate(variable-of-integration)`
+and `.doXXX.Integral(variable-of-integration)`, where `XXX` is either `rhs` or `lhs`.
+
+Integration of each side with respect to different variables
+```
+>>> eq1.dorhs.integrate(b).dolhs.integrate(a)
+a**2/2 = b**2/(2*c)
+>>> eq1.dorhs.integrate(b).dolhs.Integral(a)
+Integral(a,a) = b**2/(2*c)
+```
 
 _Solve_
 * Solve should accept equations and lists of equations and return equations or lists of
