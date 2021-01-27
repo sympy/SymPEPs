@@ -213,6 +213,10 @@ later once the objections are resolved.
 
 ## Discussion
 
+- [Initial mailing list post proposing
+  SymPEPs](https://groups.google.com/forum/#!msg/sympy/5RVMiWuCjoA/lr64dS1BBAAJ)
+- [sympy/SymPEPs#2](https://github.com/sympy/SymPEPs/pull/2)
+
 ## Copyright
 
 This document has been placed in the public domain.
