@@ -3,7 +3,7 @@ SymPEP X — Template and Instructions
 
 **Author** list of authors' real names and optionally, email addresses
 **Status** Draft | Active | Accepted | Deferred | Rejected | Withdrawn | Final | Superseded
-**Type** Standards Track | Informational| Process
+**Type** Standards Track | Informational | Process
 **Created** date created on, in yyyy-mm-dd format
 **Resolution** url to discussion (required for Accepted | Rejected | Withdrawn)
 
@@ -91,11 +91,10 @@ also be used here.
 
 ## Copyright
 
-Each SymPEP must either be explicitly labeled as placed in the public domain
-(see this SymPEP as an example) or licensed under the [Open Publication
-License](https://www.opencontent.org/openpub/)
+Each SymPEP must be explicitly labeled as placed in the public domain, using
+the below sentence (the below sentence also applies to this template).
 
-This document has been placed in the public domain. [1]_
+This document has been placed in the public domain.
 
 ## Extra Notes About SymPEPs
 
@@ -109,6 +108,12 @@ Some extra notes about writing a SymPEP:
   repository](https://github.com/sympy/SymPEPs/) on GitHub. All proposed
   SymPEPs should be made as pull requests to that repo (see [SymPEP
   1](SymPEP-0001)).
+- The number corresponding to a SymPEP will be assigned when it is first
+  proposed to the community. You may use `XXXX` as a placeholder number until
+  this is done.
+- The file for a SymPEPs should be named `SymPEP-XXXX.md` where `XXXX` is a
+  four digit number, preceded with leading 0s. It should be placed at the root
+  of the [SymPEPs repository](https://github.com/sympy/SymPEPs/).
 - All SymPEP documents should be written in Markdown, following this template.
   The Markdown should be compatible with GitHub Flavored Markdown, so that the
   SymPEPs are viewable on GitHub. This means that Markdown features
