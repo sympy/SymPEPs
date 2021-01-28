@@ -35,7 +35,7 @@ as calculators, spreadsheets and other numerical computation tools facilitate ar
 1. From an educational and new user perspective this increases the ease of use of SymPy
 by decreasing the cognitive load of using SymPy. This would be acheived by maintaining as
 close to standard mathematical notation for operations as possible (see 
-[Detailed Description](#Detailed-Descripton)). Making SymPy easier to begin using will
+[Detailed Description](#detailed-descripton)). Making SymPy easier to begin using will
 increase its adoption and encourage people to learn to use symbolic math tools.
 1. The `Equality` class does not reliably support general SymPy operations on both sides
 of the equality without collapsing to a Boolean value of `True` or `False`. Parts of SymPy
