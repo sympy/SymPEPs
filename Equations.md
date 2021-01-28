@@ -2,9 +2,13 @@ SymPEP XXXX Equation class
 =========================================
 
 **Author** Jonathan Gutow<gutow@uwosh.edu>
+
 **Status** Draft
+
 **Type** Standards Track
+
 **Created** 2021-01-25
+
 **Resolution** url to discussion (required for Accepted | Rejected | Withdrawn)
 
 
