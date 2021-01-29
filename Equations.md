@@ -266,6 +266,8 @@ A python module that implements much of the proposed capabilities is available v
 1. All the proposed behaviors except for those associated with `solve` being implemented in
 [PR 19749](https://github.com/sympy/sympy/pull/19479).
 2. The `solve` features will be implemented after step 1 is completed.
+3. Acceptance of lists of equations by `.subs()` will be implemented in parallel with or after the
+solve features.
 
 ## Alternatives
 
