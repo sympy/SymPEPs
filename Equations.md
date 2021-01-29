@@ -254,8 +254,38 @@ _Miscellaneous_
 
 ## Related Work
 
+Similar functionality is found in [SageMath](https://www.sagemath.org/), [Maple](https://maplesoft.com),
+and other symbolic math packages.
+An python module that implements much of the proposed capabilities is available via pip:
+`pip install -U Algebra_with_SymPy`. This module requires SymPy.
+
 ## Implementation
+1. All the proposed behaviors except for those associated with `solve` being implemented in
+[PR 19749](https://github.com/sympy/sympy/pull/19479).
+2. The `solve` features will be implemented after step 1 is completed.
 
 ## Alternatives
 
+An alternative would be to implement this as part of the work being done on polyadic predicate
+[PR 20656](https://github.com/sympy/sympy/pull/20656). This option was discussed in both PR 19749
+and PR 20656. The concensus was that until the predicate work reached the stage of being able to
+replace the assumptions module it would be better to keep the two pieces separate. At that point
+if combination still appeared straightforward the `Equation` class could become a subclass of the general
+class of relations that the predicate work is moving towards.
+
 ## Discussions
+
+In decending order of volume discussions within the SymPy community have occured on:
+* [PR 19749](https://github.com/sympy/sympy/pull/19479)
+* [PR 20656](https://github.com/sympy/sympy/pull/20656)
+* [SymPy Google Group](https://groups.google.com/g/sympy/c/rSi_I42i35I)
+* Non-public discussions by J. Gutow with Physical Science Educators using SymPy in their classes.
+These discussions were the original impetus for development of this class to facilitate demonstrating
+algebraic manipulations in physical science classes.
+* [Issue 4986](https://github.com/sympy/sympy/issues/4986)
+
+## References
+
+## Copyright
+
+This documente has been placed in the public domain.
