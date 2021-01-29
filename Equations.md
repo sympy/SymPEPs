@@ -291,4 +291,4 @@ algebraic manipulations in physical science classes.
 
 ## Copyright
 
-This documente has been placed in the public domain.
+This document has been placed in the public domain.
