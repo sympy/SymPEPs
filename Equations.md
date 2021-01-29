@@ -24,8 +24,11 @@ mathematical notation. This class also aims to provide output in standard mathem
 notation when used within tools such as Jupyter, that support typeset LaTex.
 
 ## Motivation and Scope
+The original impetus for development of the `Equation` class came from discussions J. Gutow 
+had with Physical Science Educators using SymPy in their classes. They wanted this on-paper-like
+behavior to facilitate demonstrating algebraic manipulations in physical science classes.
 
-There are a number of motivations for the development of the Equation class:
+There are a number of specific motivations for the development of the `Equation` class:
 1. Make interactive manipulation of equations as similar to doing the work on paper as
 possible and make the results easier to read by having results that look like
 `x = 2*y + 1` rather than `2*y + 1`, with what it is equal to on a separate line.
