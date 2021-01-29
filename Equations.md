@@ -259,7 +259,7 @@ _Miscellaneous_
 
 Similar functionality is found in [SageMath](https://www.sagemath.org/), [Maple](https://maplesoft.com),
 and other symbolic math packages.
-An python module that implements much of the proposed capabilities is available via pip:
+A python module that implements much of the proposed capabilities is available via pip:
 `pip install -U Algebra_with_SymPy`. This module requires SymPy.
 
 ## Implementation
