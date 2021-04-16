@@ -217,26 +217,16 @@ cos(a) = cos(b/c)
 _Simplification_
 * Behavior should mimic the behavior for expressions and default to applying to both sides.
 
-_Differentiation_
-
-_Integration_
-* Support integration of each side through `.doXXX.integrate(variable-of-integration)`
-and `.doXXX.Integral(variable-of-integration)`, where `XXX` is either `rhs` or `lhs`.
-
-Integration of each side with respect to different variables
-```
->>> eq1.dorhs.integrate(b).dolhs.integrate(a)
-a**2/2 = b**2/(2*c)
->>> eq1.dorhs.integrate(b).dolhs.Integral(a)
-Integral(a,a) = b**2/(2*c)
-```
+_Differentiation and Integration_
+* No special support although they could be done on the separate sides of the equation
+  or utilizing the [_Applications of methods_](#Applications-of-methods)
 
 _Solve_
 * Solve should accept equations and lists of equations and return equations or lists of
 equations as solutions. To avoid breaking past behavior this should only occur when solve
 is used on equations or lists of equations.
 
-_Applications of methods_
+#### _Applications of methods_
 * Support `.method()` calls for any method that applies to expressions. Apply the method
 to both sides of the equation.
 * Support `.apply()`, `.applylhs()`, `.applyrhs()`, `.do.`, `.dolhs.`,`.dorhs.`.
@@ -263,8 +253,9 @@ A python module that implements much of the proposed capabilities is available v
 `pip install -U Algebra_with_SymPy`. This module requires SymPy.
 
 ## Implementation
-1. All the proposed behaviors except for those associated with `solve` being implemented in
-[PR 19749](https://github.com/sympy/sympy/pull/19479).
+1. All the proposed behaviors except for those associated with `solve` have been implemented in
+[PR 21333](https://github.com/sympy/sympy/pull/21333). A smaller subset that begings building
+`Equation` as a specific case of `relational` has been implemented in [PR 21325](https://github.com/sympy/sympy/pull/21325)
 2. The `solve` features will be implemented after step 1 is completed.
 3. Acceptance of lists of equations by `.subs()` will be implemented in parallel with or after the
 solve features.
@@ -287,6 +278,8 @@ In decending order of volume discussions within the SymPy community have occured
 * Non-public discussions by J. Gutow with Physical Science Educators using SymPy in their classes.
 These discussions were the original impetus for development of this class to facilitate demonstrating
 algebraic manipulations in physical science classes.
+* [PR 21325](https://github.com/sympy/sympy/pull/21325)
+* [PR 21333](https://github.com/sympy/sympy/pull/21333)
 * [Issue 4986](https://github.com/sympy/sympy/issues/4986)
 
 ## References
