@@ -269,6 +269,8 @@ A python module that implements much of the proposed capabilities is available v
 2. The `solve` features will be implemented after step 1 is completed.
 3. Acceptance of lists of equations by `.subs()` will be implemented in parallel with or after the
 solve features.
+4. A later potential extension might be to allow the user to set parameters to control whether human readable,code or
+both forms of the expression are produced as output.
 
 ## Alternatives
 
