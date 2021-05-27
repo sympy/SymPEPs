@@ -48,11 +48,17 @@ than an extension of `Equality`.
 messy. This proposal includes extending the `solve` operation so that if passed an equation
 or set of equations it would return the solutions as a set of equations.
 1. `.subs()` could also be made more natural to use if it could take a list of equations.
+1. As an equation with an `=` connecting the two sides can be thought of as a specific 
+example of a general relation (`=`, `>`, `<`, etc...) as much as possible the `Equation`
+class should draw upon the underlying logic in the `relational` class.
 
 ## Usage and Impact
 
 The class would have the name `Equation` and `Eqn` would be a synonym. The expectation is
-that this would be used primarily interactively for symbolic algebra. Some examples:
+that this would be used primarily interactively for symbolic algebra. Some examples
+(__Note__ that for illustration purposes results of operations are written with the two
+sides connected by `=`, however this will only be the case in environments with Latex
+output):
 ```
 >>> a, b, c, x = var('a b c x')
 >>> Equation(a,b/c)
@@ -207,7 +213,9 @@ b = c**2
 a + b = b/c + c**2
 ```
 _Functions (sin, cos, exp, etc...)_
-* Functions will apply to both sides.
+* Functions will apply to both sides. Functions that take more than one parameter will
+only accept an equation as one of the parameters. It will be up to the user to make
+sure the equation is used appropriately.
 ```
 >>> cos(eq1)
 cos(a) = cos(b/c)
@@ -248,7 +256,9 @@ _Miscellaneous_
 ## Related Work
 
 Similar functionality is found in [SageMath](https://www.sagemath.org/), [Maple](https://maplesoft.com),
-and other symbolic math packages.
+and other symbolic math packages. The SageMath implementation has essentially no limitations
+on the lhs and rhs making it possible to set objects that are incompatible equal to each other.
+The proposed implementation here currently requires lhs and rhs to be valid sympy expressions.
 A python module that implements much of the proposed capabilities is available via pip:
 `pip install -U Algebra_with_SymPy`. This module requires SymPy.
 
