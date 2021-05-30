@@ -264,7 +264,7 @@ A python module that implements much of the proposed capabilities is available v
 
 ## Implementation
 1. All the proposed behaviors except for those associated with `solve` have been implemented in
-[PR 21333](https://github.com/sympy/sympy/pull/21333). A smaller subset that begings building
+[PR 21333](https://github.com/sympy/sympy/pull/21333). A smaller subset that begins building
 `Equation` as a specific case of `relational` has been implemented in [PR 21325](https://github.com/sympy/sympy/pull/21325)
 2. The `solve` features will be implemented after step 1 is completed.
 3. Acceptance of lists of equations by `.subs()` will be implemented in parallel with or after the
