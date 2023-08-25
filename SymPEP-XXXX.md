@@ -22,6 +22,8 @@ The current SymPy codebase is predominantly dynamically typed, which can lead to
 
 With static typing, users of SymPy will benefit from improved code suggestions, better error messages, and increased confidence in the correctness of their code. For instance, when working with symbolic expressions, the static type system can help catch potential issues in function calls, attribute accesses, and type mismatches. This will lead to a more intuitive and reliable programming experience for SymPy users.
 
+For example, the functions can be static typed as follows:
+
 ```python
 from typing import List
 from sympy import Expr, Symbol
@@ -37,8 +39,50 @@ def simplify_expressions(expressions: List[Expr]) -> List[Expr]:
     Simplify a list of SymPy expressions.
     """
     return [expr.simplify() for expr in expressions]
-
 ```
+
+which is better than the dynamically typed versions:
+
+```python
+def differentiate(expr, var):
+    """
+    Differentiate a SymPy expression with respect to a variable.
+    """
+    return expr.diff(var)
+
+def simplify_expressions(expressions):
+    """
+    Simplify a list of SymPy expressions.
+    """
+    return [expr.simplify() for expr in expressions]
+```
+
+which is not friendly for users because they cannot know the type of the input and output of the functions, before running the functions.
+
+```python
+from sympy import Expr, Symbol
+
+def differentiate(expr, var):
+    """
+    Differentiate a SymPy expression with respect to a variable.
+    """
+    if isinstance(expr, Expr) and isinstance(var, Symbol):
+        return expr.diff(var)
+    else:
+        raise TypeError("expr must be a SymPy expression and var must be a SymPy symbol")
+
+def simplify_expressions(expressions):
+    """
+    Simplify a list of SymPy expressions.
+    """
+    if isinstance(expressions, list):
+        if all(isinstance(expr, Expr) for expr in expressions):
+            return [expr.simplify() for expr in expressions]
+    else:
+        raise TypeError("expressions must be a list of SymPy expressions")
+```
+
+which is more verbose and less efficient than the static typed versions, because of added runtime type checks.
 
 ## Backwards Compatibility
 
