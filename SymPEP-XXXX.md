@@ -57,7 +57,8 @@ def simplify_expressions(expressions):
     return [expr.simplify() for expr in expressions]
 ```
 
-which is not friendly for users because they cannot know the type of the input and output of the functions, before running the functions.
+which is not friendly for users because they can simplify expressions with a list of integers or strings. The static typed version can catch this error at compile-time.
+
 
 ```python
 from sympy import Expr, Symbol
