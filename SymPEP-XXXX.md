@@ -55,8 +55,7 @@ This SymPEP proposes the gradual introduction of static type annotations using t
 3. Use `mypy` or `pyright` to perform static type checking and address any issues.
 4. Gradually propagate static typing to dependent modules and functions.
 5. Update documentation to reflect the new static typing conventions.
-
-The implementation progress will be tracked through pull requests linked in this section.
+6. Use `mypy` or `pyright` with strict mode.
 
 ## Alternatives
 
