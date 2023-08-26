@@ -93,7 +93,7 @@ Introducing static typing to SymPy may break backwards compatibility for code th
 
 This SymPEP proposes the gradual introduction of static type annotations using tools like Python's typing module and third-party type checkers such as ``mypy`` or ``pyright``. The process will involve identifying critical modules, functions, and classes to initiate the integration of static typing. Guidelines will be established for annotating function signatures, class attributes, and return types. The objective is to maintain compatibility with existing dynamically typed code while facilitating a seamless transition.
 
-Authors of new classes, functions, or modules in SymPy should be encouraged to write their code with static typing, unless they encounter a situation where achieving this is difficult or not possible. Even in such cases, the authors should be prompted to provide type stubs for their code, allowing for users to benefit from static typing.
+Authors of new classes, functions, or modules in SymPy should be encouraged to provide the ``.pyi`` for their implementations, unless they encounter a situation where achieving this is difficult or not possible.
 
 It's important to note that tools like ``mypy`` and ``pyright`` are capable of inferring types, which simplifies the process of incorporating static typing without requiring a steep learning curve. By adding a few annotations, the code can be enhanced in terms of clarity, facilitating the transition to static typing across the entire codebase.
 
@@ -103,24 +103,79 @@ Although the core CPython is inherently dynamically typed, nearly all core CPyth
 
 SymPy holds a pivotal role as a library used by many other libraries and stands at the forefront of the supply chain of scientific computing libraries. However, it currently lags behind technical standards by lacking comprehensive type annotations.
 
-The following forms of typing are permissible to be added to the sympy code base:
-
-For functions, classes, and modules internally used by SymPy that currently include unnecessary dynamic type checks, advocating for a shift towards static typing is advisable. This transition can help eliminate these redundant checks and consequently enhance the overall performance of the SymPy codebase.
-
-Similarly, functions, classes, and modules within SymPy that intentionally avoided runtime type checks for performance reasons should consider embracing static typing. Static typing undoubtedly mitigates performance overhead while providing better bug detection capabilities related to type errors.
-
 ## Implementation
 
-1. Identify key modules for static typing.
-2. Start by adding type annotations to function signatures and class attributes.
-3. Use `mypy` or `pyright` to perform static type checking and address any issues.
-4. Gradually propagate static typing to dependent modules and functions.
-5. Update documentation to reflect the new static typing conventions.
-6. Use `mypy` or `pyright` with strict mode.
+1. Identify Key Modules for Static Typing
+
+   Identify the modules or components in your codebase that are essential candidates for static typing. These could include frequently used public functions, classes, and methods.
+
+2. Use `.pyi` Stub Files
+
+   Stub files (`.pyi` files) are separate files that contain type hints for external modules or libraries that isn't implemented with static typing. These files serve as references for static type checking tools like mypy or pyright and enable them to understand the types and interfaces of external code.
+
+   Create a .pyi stub file for each SymPy modules by naming it with the same name as the module you're stubbing, and place it in the same directory as your code. For example, if you're stubbing the `prime` module, create a file named `prime.pyi`.
+
+3. Start by Adding Type Annotations
+
+   Begin by adding type annotations to function signatures and class attributes. For functions, specify the argument types and return type using the `->` syntax. For classes, annotate attributes in the `__init__` method and methods within the class.
+
+   ```python
+   # Original code
+   def add(a, b):
+       ...
+
+   # Annotated with type hints
+   def add(a: Integer, b: Integer) -> Integer:
+       ...
+   ```
+
+   ```python
+   # Original class
+    class Circle:
+        def __init__(self, center, radius):
+            ...
+
+   # Annotated with type hints
+    class Circle:
+        def __init__(self, center: Point2D, radius: Expr):
+            ...
+   ```
+
+4. Gradually Propagate Static Typing
+
+   Gradually add type annotations to dependent modules and functions. As you do this, ensure that you're not only annotating your code but also updating any function calls or method invocations to adhere to the new type annotations.
+
+5. Update Documentation
+
+   As you add type annotations, remember to update your code documentation to reflect the new static typing conventions. This will help other developers understand the expected types and enhance the overall clarity of your codebase.
+
+6. Use Strict Mode with mypy or pyright
+
+   Both mypy and pyright offer a strict mode that enforces more comprehensive type checking. Enable strict mode in your static type checking tool to catch even subtle type-related issues.
+
+Remember that static typing is an iterative process. Start with the most critical parts of your codebase, or most simple and easiest parts of the codebase, and gradually expand the coverage as you become more comfortable with the process. This approach helps maintain a balance between improving code quality and avoiding overwhelming upfront changes.
 
 ## Alternatives
 
-An alternative approach would be to maintain the status quo of dynamic typing. However, this could lead to ongoing challenges in maintaining code quality and preventing runtime errors, especially as the SymPy codebase continues to evolve.
+### Keeping the status quo of static typing
+
+An alternative perspective is to maintain the current dynamic typing approach. However, this decision could potentially give rise to persistent challenges in upholding code quality and mitigating runtime errors, particularly as the SymPy codebase continues to evolve.
+
+### Conservatism and Community Implications
+
+To conserve about not using any type hints in the SymPy, additional concern regarding its impact on the SymPy community. By adhering strictly to dynamic typing and favoring duck typing, there's a risk of creating a division between users who prefer static typing for its benefits and those who are more inclined towards the existing syntax. This division might inadvertently isolate those who seek the advantages of static typing and potentially alienate them from the community. Consequently, this could lead to a situation where users start exploring alternative of SymPy instead of contributing to SymPy's improvement.
+
+### Challenges of Comprehensive Annotation
+
+Another approach to consider is fully annotating the entire SymPy codebase with inline type hints. While this strategy offers a comprehensive solution, it's worth noting that it presents significant technical challenges. Certain SymPy functions, like ``solve``, inherently defy easy expression through type annotations due to their complexity. Attempting to annotate these functions might introduce more confusion than clarity, making this approach less feasible in practice.
+
+### The Role of .pyi Stubs
+
+In light of the aforementioned considerations, ``.pyi`` stub files emerge as an appealing middle ground to introduce static typing to the core of SymPy. The advantage of this approach lies in its non-intrusive nature. It doesn't necessitate altering the existing codebase, and it has no impact on the documentation. This means that the project can gradually adopt static typing without undergoing immediate massive changes, striking a balance between the advantages of static typing and the project's existing dynamics.
+
+### Verification and Community Management
+
+It's important to acknowledge that while ``.pyi`` files offer a promising route, they are not without their challenges. There's a potential for these stub files to define unsound types that don't accurately reflect the implementation. This underscores the need for human reviewers to meticulously assess their correctness ensure their alignment with the project's implementation. The community's involvement in managing these ``.pyi`` files becomes crucial for maintaining the integrity of the type information and promoting accurate static type checking.
 
 ## Discussion
 
