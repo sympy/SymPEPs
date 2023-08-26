@@ -157,7 +157,7 @@ Remember that static typing is an iterative process. Start with the most critica
 
 ## Alternatives
 
-### Keeping the status quo of static typing
+### Keeping the status quo of duck typing
 
 An alternative perspective is to maintain the current dynamic typing approach. However, this decision could potentially give rise to persistent challenges in upholding code quality and mitigating runtime errors, particularly as the SymPy codebase continues to evolve.
 
