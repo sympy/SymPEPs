@@ -59,7 +59,6 @@ def simplify_expressions(expressions):
 
 which is not friendly for users because they can simplify expressions with a list of integers or strings. The static typed version can catch this error at compile-time.
 
-
 ```python
 from sympy import Expr, Symbol
 
@@ -87,7 +86,8 @@ which is more verbose and less efficient than the static typed versions, because
 
 ## Backwards Compatibility
 
-Introducing static typing to SymPy may break backwards compatibility for code that relies on dynamically typed behavior. Users who heavily depend on runtime type inference might need to update their code to match the new type annotations.
+There are no backwards compatibility issues with this SymPEP, for users
+who don't use the type checkers like ``mypy`` or ``pyright``. However, for users who use the type checkers, they need to update their code to match the new type annotations.
 
 ## Detailed Description
 
