@@ -91,21 +91,23 @@ Introducing static typing to SymPy may break backwards compatibility for code th
 
 ## Detailed Description
 
-This SymPEP proposes the gradual introduction of static type annotations using tools like Python's `typing` module and third-party type checkers such as `mypy` or `pyright`. The process will involve identifying critical modules, functions, and classes to begin the static typing integration. We will define guidelines for annotating function signatures, class attributes, and return types. The goal is to maintain compatibility with existing dynamically typed code while allowing for a smooth transition.
+This SymPEP proposes the gradual introduction of static type annotations using tools like Python's typing module and third-party type checkers such as ``mypy`` or ``pyright``. The process will involve identifying critical modules, functions, and classes to initiate the integration of static typing. Guidelines will be established for annotating function signatures, class attributes, and return types. The objective is to maintain compatibility with existing dynamically typed code while facilitating a seamless transition.
 
-Authors of new classes, functions, or modules in SymPy should be encouraged to write their code with static typing, unless they encounter a situation where achieving this is difficult or not possible. In such cases, they are expected to include a comment explaining the reasons preventing static typing.
+Authors of new classes, functions, or modules in SymPy should be encouraged to write their code with static typing, unless they encounter a situation where achieving this is difficult or not possible. In such cases, the authors should be prompted to provide type stubs for their code, allowing for users to benefit from static typing.
 
-Introducing new dynamically typed code initially can lead to the accumulation of technical debt. It's recognized that migrating existing dynamically typed code later is significantly more challenging than initially writing code with static typing. Therefore, introducing new dynamically typed code should be approached cautiously.
+It's important to note that tools like ``mypy`` and ``pyright`` are capable of inferring types, which simplifies the process of incorporating static typing without requiring a steep learning curve. By adding a few annotations, the code can be enhanced in terms of clarity, facilitating the transition to static typing across the entire codebase.
 
-It's important to note that tools like mypy and pyright are capable of inferring types, facilitating the incorporation of static typing without a steep learning curve. By adding a few annotations, code can be made cleaner and the transition to static typing across the entire codebase can be eased.
+Encouraging the SymPy community to collaborate on creating ``.pyi`` files to provide type stubs for all exported functions and classes in SymPy is recommended for fostering public access to type information.
 
-For functions, classes, and modules internally used by SymPy that currently feature unnecessary dynamic type checks, a shift towards static typing should be promoted. This transition can help eliminate these unnecessary checks and subsequently enhance the overall performance of the SymPy codebase.
+Although the core CPython is inherently dynamically typed, nearly all core CPython standard libraries are equipped with type annotations. Similarly, popular third-party libraries like ``numpy``, ``scipy``, or ``pandas`` provide users with type annotations.
 
-Similarly, functions, classes, and modules within SymPy that intentionally avoided runtime type checks for performance reasons should consider embracing static typing. Static typing undoubtedly mitigates performance overhead while providing better bug detection related to type errors.
+SymPy holds a pivotal role as a library used by many other libraries and stands at the forefront of the supply chain of scientific computing libraries. However, it currently lags behind technical standards by lacking comprehensive type annotations.
 
-However, in the case of core and public functions and classes, such as ``sympify``, ``simplify``, or ``lambdify``, which have historically relied on dynamic typing for an extended period, the introduction of static typing should be approached judiciously. It should be implemented for these core components only if it doesn't disrupt backward compatibility.
+The following forms of typing are permissible to be added to the sympy code base:
 
-It's worth noting that SymPy has devoted considerable effort over time to address type-related issues of Python objects within SymPy. This was especially relevant during periods when the Python type system was less mature or lacked type hinting capabilities.
+For functions, classes, and modules internally used by SymPy that currently include unnecessary dynamic type checks, advocating for a shift towards static typing is advisable. This transition can help eliminate these redundant checks and consequently enhance the overall performance of the SymPy codebase.
+
+Similarly, functions, classes, and modules within SymPy that intentionally avoided runtime type checks for performance reasons should consider embracing static typing. Static typing undoubtedly mitigates performance overhead while providing better bug detection capabilities related to type errors.
 
 ## Implementation
 
