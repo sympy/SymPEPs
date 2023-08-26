@@ -185,6 +185,7 @@ It's important to acknowledge that while ``.pyi`` files offer a promising route,
 
 - [Python Typing Documentation](https://docs.python.org/3/library/typing.html)
 - [PEP-484](https://peps.python.org/pep-0484/)
+- [PEP-561](https://peps.python.org/pep-0561/)
 - [MyPy Documentation](https://mypy.readthedocs.io/en/stable/)
 - [Pyright Documentation](https://microsoft.github.io/pyright/)
 
