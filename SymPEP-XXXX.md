@@ -177,6 +177,12 @@ In light of the aforementioned considerations, ``.pyi`` stub files emerge as an 
 
 It's important to acknowledge that while ``.pyi`` files offer a promising route, they are not without their challenges. There's a potential for these stub files to define unsound types that don't accurately reflect the implementation. This underscores the need for human reviewers to meticulously assess their correctness ensure their alignment with the project's implementation. The community's involvement in managing these ``.pyi`` files becomes crucial for maintaining the integrity of the type information and promoting accurate static type checking.
 
+### Using `S` for SymPy objects
+
+LPython is currently engaged in the development of a Python compiler. This compiler harnesses the benefits of statically typed functions, classes, and symbolic expressions found in SymPy.
+
+To enhance collaboration and foster compatibility, there's a proposal to initiate a discussion regarding the establishment of type annotations as the standardized technical interface for interacting with LPython. This approach would involve soliciting input not only from the SymPy community but also potentially from external stakeholders, including 3rd party computer algebra systems and compilers. Rather than making internal decisions and implementing changes solely within the SymPy community, this effort aims to gather broader perspectives and create a consensus-driven approach to drive the evolution of LPython and its interface standards.
+
 ## Discussion
 
 - [Look into using type hints](https://github.com/sympy/sympy/issues/17945)
