@@ -8,7 +8,7 @@
 
 **Created:** 2023-08-25
 
-**Resolution:** [Link to Discussion]
+**Resolution:** `https://github.com/sympy/SymPEPs/pull/4`
 
 ## Abstract
 
