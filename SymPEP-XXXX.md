@@ -191,6 +191,12 @@ The SymPy community is already using the ``mypy`` type checker for static type c
 
 However, we are not decided to add other type checkers to build integration progress.
 
+### Preference about static typing and dynamic typing
+
+The SymPy community does not currently exhibit a consensus regarding a preference for either dynamic typing or static typing in the project's development and codebase. Different contributors and stakeholders within the community may hold differing viewpoints on this matter.
+
+However, we are trying to make our code supportive with both the static-typed and dynamic-typed ecosystem of the Python, as much as we are willing to support different Python versions, Python implementations or language extensions, if possible.
+
 ### Using `S` for SymPy objects
 
 LPython is currently engaged in the development of a Python compiler. This compiler harnesses the benefits of statically typed functions, classes, and symbolic expressions found in SymPy.
