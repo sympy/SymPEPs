@@ -93,7 +93,7 @@ Introducing static typing to SymPy may break backwards compatibility for code th
 
 This SymPEP proposes the gradual introduction of static type annotations using tools like Python's typing module and third-party type checkers such as ``mypy`` or ``pyright``. The process will involve identifying critical modules, functions, and classes to initiate the integration of static typing. Guidelines will be established for annotating function signatures, class attributes, and return types. The objective is to maintain compatibility with existing dynamically typed code while facilitating a seamless transition.
 
-Authors of new classes, functions, or modules in SymPy should be encouraged to write their code with static typing, unless they encounter a situation where achieving this is difficult or not possible. In such cases, the authors should be prompted to provide type stubs for their code, allowing for users to benefit from static typing.
+Authors of new classes, functions, or modules in SymPy should be encouraged to write their code with static typing, unless they encounter a situation where achieving this is difficult or not possible. Even in such cases, the authors should be prompted to provide type stubs for their code, allowing for users to benefit from static typing.
 
 It's important to note that tools like ``mypy`` and ``pyright`` are capable of inferring types, which simplifies the process of incorporating static typing without requiring a steep learning curve. By adding a few annotations, the code can be enhanced in terms of clarity, facilitating the transition to static typing across the entire codebase.
 
