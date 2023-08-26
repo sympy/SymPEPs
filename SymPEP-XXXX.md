@@ -177,6 +177,14 @@ In light of the aforementioned considerations, ``.pyi`` stub files emerge as an 
 
 It's important to acknowledge that while ``.pyi`` files offer a promising route, they are not without their challenges. There's a potential for these stub files to define unsound types that don't accurately reflect the implementation. This underscores the need for human reviewers to meticulously assess their correctness ensure their alignment with the project's implementation. The community's involvement in managing these ``.pyi`` files becomes crucial for maintaining the integrity of the type information and promoting accurate static type checking.
 
+### Allowed Type Annotations
+
+The nature and extent of permissible type annotations are open to discussion.
+Our stance is that there are no constraints on allowable type annotations,
+as long as they adhere to PEP guidelines and are compatible with the minimum Python version supported by SymPy.
+Nevertheless, these annotations must be structured
+according to ``.pyi`` files for type hinting purposes.
+
 ### Using `S` for SymPy objects
 
 LPython is currently engaged in the development of a Python compiler. This compiler harnesses the benefits of statically typed functions, classes, and symbolic expressions found in SymPy.
