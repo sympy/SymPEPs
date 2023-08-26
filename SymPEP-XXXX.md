@@ -131,14 +131,14 @@ SymPy holds a pivotal role as a library used by many other libraries and stands 
 
    ```python
    # Original class
-    class Circle:
-        def __init__(self, center, radius):
-            ...
+   class Circle:
+       def __init__(self, center, radius):
+           ...
 
    # Annotated with type hints
-    class Circle:
-        def __init__(self, center: Point2D, radius: Expr):
-            ...
+   class Circle:
+       def __init__(self, center: Point2D, radius: Expr):
+           ...
    ```
 
 4. Gradually Propagate Static Typing
@@ -184,6 +184,12 @@ Our stance is that there are no constraints on allowable type annotations,
 as long as they adhere to PEP guidelines and are compatible with the minimum Python version supported by SymPy.
 Nevertheless, these annotations must be structured
 according to ``.pyi`` files for type hinting purposes.
+
+### Supported Type Checkers
+
+The SymPy community is already using the ``mypy`` type checker for static type checking. However, there are other type checkers available, including ``pyright``, ``pytype``, and ``pyre``. The SymPy community is open to supporting other type checkers as well. And may receive requests from the community, if there are issues from other type checkers.
+
+However, we are not decided to add other type checkers to build integration progress.
 
 ### Using `S` for SymPy objects
 
