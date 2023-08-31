@@ -237,8 +237,8 @@ later once the objections are resolved.
 
 This describes the general set of steps for a SymPEP:
 
-- From a discussion in mailing list, issue or PR, someone might suggest a
-  SymPEP being needed.
+- From a discussion in the mailing list, an issue or PR, someone might suggest
+  a SymPEP being needed.
 - If discussion did not start on the mailing list, then move to the mailing
   list (with cross-reference links) to gage whether a SymPEP is appropriate to
   pursue.
