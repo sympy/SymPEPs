@@ -1,10 +1,10 @@
 # SymPEP 1 --- SymPEP Purpose and Process
 
-**Author** Aaron Meurer
-**Status** Draft
-**Type** Process
-**Created** 2021-01-27
-**Resolution**
+**Author** Aaron Meurer, Jason K. Moore  
+**Status** Draft  
+**Type** Process  
+**Created** 2021-01-27  
+**Resolution**  
 
 ## Abstract
 
@@ -18,34 +18,26 @@ corresponding documents.
 
 SymPEP stands for "SymPy Enhancement Proposal". SymPEPs represent a formal
 process whereby important changes are proposed and discussed in the SymPy
-community. Corresponding to each SymPEP is a SymPEP document which outlines
-the proposal and corresponding discussion. SymPEPs are based on
+community. Corresponding to each SymPEP is a SymPEP document which outlines the
+proposal and corresponding discussion. SymPEPs are based on the
 [PEP](https://www.python.org/dev/peps/) process used by the Python language
 community to propose changes to the Python language. It also takes motivations
 from other similar processes in communities adjacent to SymPy, such as the
 [NEP](https://numpy.org/neps/nep-0000.html) process for NumPy and the
 [MEP](https://matplotlib.org/devel/MEP/index.html) process for Matplotlib.
-However, the SymPEP process differs from these processes in many ways, so
-those who may already be familiar with similar processes from other
-communities should read this document to understand how it works for SymPEPs.
-
-In particular, SymPEPs are significantly less formal than Python PEPs.
+However, the SymPEP process differs from these processes in some ways, so those
+who may already be familiar with similar processes from other communities
+should read this document to understand how it works for SymPEPs.
 
 ## Types
 
 There are three kinds of SymPEPs:
 
-A **Standards Track** SymPEP describes a new feature or important change for
-SymPy.
+A **Software Track** SymPEP describes a new feature or important change for the
+code in SymPy.
 
-An **Informational** SymPEP describes a SymPy design issue, or provides general
-guidelines or information to the Python community, but does not propose a new
-feature. Informational SymPEPs do not necessarily represent a SymPy community
-consensus or recommendation, so users and implementers are free to ignore
-Informational SymPEPs or follow their advice.
-
-A **Process** SymPEP describes a process surrounding SymPy, or proposes a
-change to (or an event in) a process. Process SymPEPs are like Standards Track
+A **Process** SymPEP describes a process related to SymPy, or proposes a
+change to (or an event in) a process. Process SymPEPs are like Software Track
 SymPEPs but apply to areas other than the SymPy library itself. They may
 propose an implementation, but not to SymPy’s codebase; they require community
 consensus. Examples include procedures, guidelines, changes to the
@@ -78,40 +70,60 @@ implementation of the change.
 
 ## SymPEP Workflow
 
-Discussions around a proposed change may begin informally on the mailing list
-or SymPy issue tracker. However, once it is decided that the formal SymPEP
-process is desired for a change, the discussion should move to the
-[SymPEP repository](https://github.com/sympy/SymPEPs) on GitHub.
+Discussions around a proposed change typically begin informally on the mailing
+list or SymPy issue/pull-request tracker. However, once it is decided that the
+formal SymPEP process is desired for a change, the discussion should move to
+the [SymPEP repository](https://github.com/sympy/SymPEPs) on GitHub.
 
-Every SymPEP must have a champion. This is a person who is responsible for
-writing the SymPEP, leads the discussion around it, and tries to create
-consensus around it.
+Not all significant changes or additions to SymPy require a SymPEP. If the
+change would benefit from extended discussion or needs a roadmap for
+implementation, a SymPEP should be considered. If unsure, consult with the
+community on the currently active discussion forum. Most all changes to and
+decisions regarding SymPy can be made through issues and pull requests, so it
+is best to start with one or the other. Examples of things that likely need a
+SymPEP are: major version changes (1.X.X -> 2.0), large breaks in backwards
+compatibility, adding new primary packages within SymPy, adding hard
+dependencies, introduction of development practices or tools all developers
+need to adopt, etc. Long term SymPy policies and goals should also be discussed
+and developed as SymPEPs. Statements of these policies and goals should be
+incorporated into the SymPy documentation, as determined in the associated
+SymPEP.
 
-The author of a SymPEP should fork the repository and create a pull request
-with a new SymPEP document based on the [SymPEP template](SymPEP-template).
-The SymPEP document may be named `SymPEP-XXXX.md` until a number is assigned.
-One of the core SymPy developers will then assign a number to the SymPEP, in
-which case `XXXX` should be replaced with the number with leading 0s. The
-person who assigns the number should also update the
+Every SymPEP must have at least one champion. The champion(s) are persons who
+are responsible for writing the SymPEP, leading the discussions around it, and
+developing consensus around it.
+
+The author of a SymPEP should fork the repository and create a draft pull
+request with a new SymPEP document based on the [SymPEP
+template](SymPEP-template). The SymPEP document may be named `SymPEP-XXXX.md`
+until a number is assigned. Once the author completes all information in the
+template and would like it to be reviewed, one of the core SymPy developers should
+decide if the proposal is a legtimate proposal and then assign a number to the
+SymPEP, in which case `XXXX` should be replaced with the number with leading
+0s. The pull request can then be moved to an open pull request and is ready for
+community feedback and discussion but remains in draft state. The person who
+assigns the number should also update the
 [README](https://github.com/sympy/SymPEPs/blob/main/README.md) of the main
 [SymPEP repository](https://github.com/sympy/SymPEPs) to list that number.
-Numbers should be assigned to SymPEPs as soon as it is determined that they
-are a legitimate proposal. If a SymPEP ends up being rejected or postponed, it
-keeps its number, as rejection or postponement status is still a discussion
-that should be documented in the SymPEP. SymPEP numbers should generally be
-assigned in increasing numeric order.
+Numbers should be assigned to SymPEPs as soon as it is determined that they are
+a legitimate proposal. If a SymPEP is not deemed necessary, the author should
+rework the SymPEP or move it to a normal pull request or issue on the main
+SymPy repository. If a SymPEP ends up being rejected or postponed, it keeps its
+number, as rejection or postponement status is still a discussion that should
+be documented in the SymPEP. SymPEP numbers should generally be assigned in
+increasing numeric order.
 
-Discussion on the SymPEP should then continue on the SymPEP pull request.
+Discussion on the SymPEP should then continue on the open pull request.
 Discussions may also take place in other places, such as [GitHub
 discussions](https://github.com/sympy/SymPEPs/discussions) or the [mailing
 list](http://groups.google.com/group/sympy). All discussions should be
 cross-referenced in the "Discussions" section of the SymPEP document.
 
-For each SymPEP, the community should decide whether a draft implementation is
-needed before acceptance or not. For instance, if a SymPEP concerns the
-details of how a feature is implemented, it should be accepted before that
-happens. On the other hand, the community may decide that it cannot come to a
-consensus about a SymPEP until a draft implementation is proposed.
+For each SymPEP, the community should decide whether a draft implementation of
+the change is needed before acceptance or not. For instance, if a SymPEP
+concerns the details of how a feature is implemented, it should be accepted
+before that happens. On the other hand, the community may decide that it cannot
+come to a consensus about a SymPEP until a draft implementation is proposed.
 
 Once the community reaches a consensus about a SymPEP, the status of a SymPEP
 should be updated (see below). This consensus may be to accept or to reject
@@ -125,14 +137,15 @@ decision making process.
 
 The **status** section at the top of the SymPEP document (see the
 [template](SymPEP-template)) should be updated according to the current status
-of the SymPEP.
+of the SymPEP. Do not confuse this with the "draft/open pull request state on
+Github".
 
 All SymPEPs should be created with the **Draft** status. **Draft** status
 SymPEPs generally live in a pull request.
 
 Eventually, after discussion, there may be a consensus that the SymPEP should
-be accepted–see the next section for details. At this point the status
-becomes **Accepted**.
+be accepted–see the next section for details. At this point the status becomes
+**Accepted**.
 
 Once a SymPEP has been **Accepted**, the reference implementation must be
 completed. When the reference implementation is complete and incorporated into
@@ -144,15 +157,15 @@ the SymPEP.
 
 A SymPEP can also be **Rejected**. Perhaps after all is said and done it was
 not a good idea. It is still important to have a record of this fact. The
-**Withdrawn** status is similar—it means that the SymPEP author themselves has
-decided that the SymPEP is actually a bad idea, or has accepted that a
-competing proposal is a better alternative.
+**Withdrawn** status is similar, it means that the SymPEP author themselves has
+decided that the SymPEP is actually a bad idea or has accepted that a competing
+proposal is a better alternative.
 
 SymPEPs can also be **Superseded** by a different SymPEP, rendering the
 original obsolete.
 
-Process SymPEPs may also have a status of **Active** if they are never meant
-to be completed, e.g. SymPEP 1 (this SymPEP).
+Process SymPEPs may also have a status of **Active** if they are never meant to
+be completed, e.g. SymPEP 1 (this SymPEP).
 
 ### Merging the SymPEP Document Pull Request
 
@@ -169,8 +182,8 @@ proper—again, discussion may be picked up again with a new pull request.
 
 ## Accepting a SymPEP
 
-Once a SymPEP is Accepted by consensus of all interested contributors, an
-email should be sent to the [SymPy mailing
+Once a SymPEP is Accepted by consensus of all interested contributors, an email
+should be sent to the [SymPy mailing
 list](http://groups.google.com/group/sympy) with a subject like:
 
     Proposal to accept SymPEP #<number>: <title>
@@ -182,23 +195,29 @@ In the body of your email, you should:
 - briefly describe any major points of contention and how they were resolved,
 
 - include a sentence like: “If there are no substantive objections within 7
-  days from this email, then the SymPEP will be accepted; see SymPEP 1 for
-  more details.”
+  days from this email, then the SymPEP will be accepted; see SymPEP 1 for more
+  details.”
 
-After you send the email, add the the email thread to the Discussion section
-of the SymPEP, so that people can find it later.
+After you send the email, add the the email thread to the Discussion section of
+the SymPEP, so that people can find it later.
 
 Generally the SymPEP author will be the one to send this email, but anyone can
-do it – the important thing is to make sure that everyone knows when a SymPEP
-is on the verge of acceptance, and give them a final chance to respond. If
-there’s some special reason to extend this final comment period beyond 7 days,
-then that’s fine, just say so in the email. It shouldn’t be less than 7 days,
+do it. The important thing is to make sure that everyone knows when a SymPEP is
+on the verge of acceptance, and give them a final chance to respond. If there's
+some special reason to extend this final comment period beyond 7 days, then
+that's fine, just say so in the email. It shouldn't be less than 7 days,
 because sometimes people are traveling or similar and need some time to
 respond.
 
 In general, the goal is to make sure that the community has consensus, not
 provide a rigid policy for people to try to game. When in doubt, err on the
 side of asking for more feedback and looking for opportunities to compromise.
+
+It is also important that SymPEPs are a mechanism to enable change as opposed
+to hindering and slowing change. The general approach of reviewers should be to
+help the author get it to a state that can be accepted or by offering
+alternative proposals. SymPEPs shouldn't be the place where energy and ideas
+die.
 
 If the final comment period passes without any substantive objections, then
 the SymPEP can officially be marked **Accepted**. A followup email should then
