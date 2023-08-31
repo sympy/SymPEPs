@@ -240,7 +240,7 @@ This describes the general set of steps for a SymPEP:
 - From a discussion in the mailing list, an issue or PR, someone might suggest
   a SymPEP being needed.
 - If discussion did not start on the mailing list, then move to the mailing
-  list (with cross-reference links) to gage whether a SymPEP is appropriate to
+  list (with cross-reference links) to gauge whether a SymPEP is appropriate to
   pursue.
 - If it seems appropriate, make a draft pull request with your SymPEP. When your
   draft is ready for a review, request a number assignment on the pull request.
