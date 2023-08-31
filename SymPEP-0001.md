@@ -118,7 +118,7 @@ The author should announce the SymPEP on the mailing list when the number is
 assigned to encourage discussion. Discussion on the SymPEP should primarily
 continue on the open pull request but may also take place in other places, such
 as [GitHub discussions](https://github.com/sympy/SymPEPs/discussions) or the
-[mailing list](http://groups.google.com/group/sympy) with the later being
+[mailing list](http://groups.google.com/group/sympy) with the latter being
 favored. All discussions should be cross-referenced in the "Discussions"
 section of the SymPEP document.
 
