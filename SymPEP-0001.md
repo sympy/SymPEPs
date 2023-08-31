@@ -233,7 +233,7 @@ If there are substantive objections, then the SymPEP remains in Draft state,
 discussion continues as normal, and it can be proposed for acceptance again
 later once the objections are resolved.
 
-## SymPEP Steps
+### SymPEP Steps
 
 This describes the general set of steps for a SymPEP:
 
