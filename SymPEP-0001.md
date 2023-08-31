@@ -31,7 +31,7 @@ should read this document to understand how it works for SymPEPs.
 
 ## Types
 
-There are three kinds of SymPEPs:
+There are two kinds of SymPEPs:
 
 A **Software Track** SymPEP describes a new feature or important change for the
 code in SymPy.
@@ -55,18 +55,18 @@ The SymPEP process and corresponding documents serve several purposes:
 - To document the above discussions and decisions for future reference.
 - To document the motivations for a change from the perspective of end users
   who may be affected by it. Here "end users" means both users of the SymPy
-  library, as well as developers working on parts of SymPy itself which may be
-  affected by the change.
+  library, developers working on parts of SymPy itself which may be affected by
+  the change, and developers of downstream libraries that depend on SymPy.
 
 Importantly, **a SymPEP is not documentation** for the proposed change. End
-user documentation should be included with the implementation of the feature
-in the corresponding SymPy documentation. This also means that other
-documentation should not cross-reference a SymPEP as if it were documentation
-for a feature. Even technical discussion of a feature should be documented
-separately from a SymPEP. The reason is that SymPEPs will necessarily include
-details that are irrelevant to the final implementation, such as discussions
-of alternate implementations which were rejected and discussions of
-implementation of the change.
+user documentation should be included with the implementation of the feature in
+the corresponding SymPy documentation. This also means that other documentation
+should not rely on cross-referencing a SymPEP as if it were documentation for a
+feature. Even technical discussion of a feature should be documented separately
+from a SymPEP. The reason is that SymPEPs will necessarily include details that
+are irrelevant to the final implementation, such as discussions of alternate
+implementations which were rejected and discussions of implementation of the
+change.
 
 ## SymPEP Workflow
 
@@ -78,7 +78,7 @@ the [SymPEP repository](https://github.com/sympy/SymPEPs) on GitHub.
 Not all significant changes or additions to SymPy require a SymPEP. If the
 change would benefit from extended discussion or needs a roadmap for
 implementation, a SymPEP should be considered. If unsure, consult with the
-community on the currently active discussion forum. Most all changes to and
+community on the currently active discussion forum. Most changes to and
 decisions regarding SymPy can be made through issues and pull requests, so it
 is best to start with one or the other. Examples of things that likely need a
 SymPEP are: major version changes (1.X.X -> 2.0), large breaks in backwards
@@ -97,12 +97,13 @@ The author of a SymPEP should fork the repository and create a draft pull
 request with a new SymPEP document based on the [SymPEP
 template](SymPEP-template). The SymPEP document may be named `SymPEP-XXXX.md`
 until a number is assigned. Once the author completes all information in the
-template and would like it to be reviewed, one of the core SymPy developers should
-decide if the proposal is a legtimate proposal and then assign a number to the
-SymPEP, in which case `XXXX` should be replaced with the number with leading
-0s. The pull request can then be moved to an open pull request and is ready for
-community feedback and discussion but remains in draft state. The person who
-assigns the number should also update the
+template and would like it to be reviewed, one of the [core SymPy
+developers](https://github.com/orgs/sympy/teams/developers-with-push-access-to-everything)
+should decide if the proposal is a legitimate proposal and then assign a number
+to the SymPEP, in which case `XXXX` should be replaced with the number with
+leading 0s. The pull request can then be moved to an open pull request and is
+ready for community feedback and discussion but remains in draft status. The
+person who assigns the number should also update the
 [README](https://github.com/sympy/SymPEPs/blob/main/README.md) of the main
 [SymPEP repository](https://github.com/sympy/SymPEPs) to list that number.
 Numbers should be assigned to SymPEPs as soon as it is determined that they are
@@ -113,11 +114,13 @@ number, as rejection or postponement status is still a discussion that should
 be documented in the SymPEP. SymPEP numbers should generally be assigned in
 increasing numeric order.
 
-Discussion on the SymPEP should then continue on the open pull request.
-Discussions may also take place in other places, such as [GitHub
-discussions](https://github.com/sympy/SymPEPs/discussions) or the [mailing
-list](http://groups.google.com/group/sympy). All discussions should be
-cross-referenced in the "Discussions" section of the SymPEP document.
+The author should announce the SymPEP on the mailing list when the number is
+assigned to encourage discussion. Discussion on the SymPEP should primarily
+continue on the open pull request but may also take place in other places, such
+as [GitHub discussions](https://github.com/sympy/SymPEPs/discussions) or the
+[mailing list](http://groups.google.com/group/sympy) with the later being
+favored. All discussions should be cross-referenced in the "Discussions"
+section of the SymPEP document.
 
 For each SymPEP, the community should decide whether a draft implementation of
 the change is needed before acceptance or not. For instance, if a SymPEP
@@ -144,7 +147,7 @@ All SymPEPs should be created with the **Draft** status. **Draft** status
 SymPEPs generally live in a pull request.
 
 Eventually, after discussion, there may be a consensus that the SymPEP should
-be accepted–see the next section for details. At this point the status becomes
+be accepted; see the next section for details. At this point the status becomes
 **Accepted**.
 
 Once a SymPEP has been **Accepted**, the reference implementation must be
@@ -194,12 +197,12 @@ In the body of your email, you should:
 
 - briefly describe any major points of contention and how they were resolved,
 
-- include a sentence like: “If there are no substantive objections within 7
+- include a sentence like: "If there are no substantive objections within 7
   days from this email, then the SymPEP will be accepted; see SymPEP 1 for more
-  details.”
+  details."
 
-After you send the email, add the the email thread to the Discussion section of
-the SymPEP, so that people can find it later.
+After you send the email, add the email thread to the Discussion section of the
+SymPEP, so that people can find it later.
 
 Generally the SymPEP author will be the one to send this email, but anyone can
 do it. The important thing is to make sure that everyone knows when a SymPEP is
@@ -229,6 +232,32 @@ already, so that it is visible in the SymPEP repository proper.
 If there are substantive objections, then the SymPEP remains in Draft state,
 discussion continues as normal, and it can be proposed for acceptance again
 later once the objections are resolved.
+
+## SymPEP Steps
+
+This describes the general set of steps for a SymPEP:
+
+- From a discussion in mailing list, issue or PR, someone might suggest a
+  SymPEP being needed.
+- If discussion did not start on the mailing list, then move to the mailing
+  list (with cross-reference links) to gage whether a SymPEP is appropriate to
+  pursue.
+- If it seems appropriate, make a draft pull request with your SymPEP. When your
+  draft is ready for a review, request a number assignment on the pull request.
+- A core developer other than the author(s) assigns the number and opens the
+  pull request (out of Github draft state).
+- Announce on the mailing list that the SymPEP is ready for review and
+  discussion. Suggest the primary forum for detailed discussion.
+- Detailed discussion takes place in the designated forum until consensus of
+  those participating is reached.
+- Once reached, announce the final draft of SymPEP on the mailing list and then
+  it can be 7 days or perhaps longer, if indicated, for anyone to object.
+- After the objection period, the status of the SymPEP is set to "Accepted" and
+  a core developer merges the pull request.
+- After implementation of the software changes or process changes, update the
+  SymPEP status to "Final".
+
+Deferment, rejection, or deemed inappropriate steps may occur along the way.
 
 ## Discussion
 

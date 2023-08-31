@@ -75,9 +75,8 @@ be discussed here, along with a justification for the chosen approach.
 ## Discussion
 
 This section may just be a bullet list including links to any discussions
-regarding the SymPEP:
-
-- This includes links to mailing list threads or relevant GitHub issues.
+regarding the SymPEP. All issues, pull requests, discussions, and mailing list
+threads relating to a SymPEP should be listed and hyperlinked here.
 
 ## References
 
