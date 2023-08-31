@@ -1,11 +1,11 @@
 SymPEP X — Template and Instructions
 ====================================
 
-**Author** list of authors' real names and optionally, email addresses
-**Status** Draft | Active | Accepted | Deferred | Rejected | Withdrawn | Final | Superseded
-**Type** Standards Track | Informational | Process
-**Created** date created on, in yyyy-mm-dd format
-**Resolution** url to discussion (required for Accepted | Rejected | Withdrawn)
+**Author** list of authors' real names and optionally, email addresses  
+**Status** Draft | Active | Accepted | Deferred | Rejected | Withdrawn | Final | Superseded  
+**Type** Standards Track | Informational | Process  
+**Created** date created on, in yyyy-mm-dd format  
+**Resolution** url to discussion (required for Accepted | Rejected | Withdrawn)  
 
 ## Abstract
 
