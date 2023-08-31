@@ -183,7 +183,7 @@ isn't yet accepted or rejected. SymPEP discussions that have stalled should
 also be merged, so that the SymPEP becomes visible in the SymPEP repository
 proper—again, discussion may be picked up again with a new pull request.
 
-## Accepting a SymPEP
+### Accepting a SymPEP
 
 Once a SymPEP is Accepted by consensus of all interested contributors, an email
 should be sent to the [SymPy mailing
