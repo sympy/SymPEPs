@@ -3,7 +3,7 @@ SymPEP X — Template and Instructions
 
 **Author** list of authors' real names and optionally, email addresses  
 **Status** Draft | Active | Accepted | Deferred | Rejected | Withdrawn | Final | Superseded  
-**Type** Standards Track | Informational | Process  
+**Type** Standards Track | Process  
 **Created** date created on, in yyyy-mm-dd format  
 **Resolution** url to discussion (required for Accepted | Rejected | Withdrawn)  
 
@@ -117,9 +117,6 @@ Some extra notes about writing a SymPEP:
   The Markdown should be compatible with GitHub Flavored Markdown, so that the
   SymPEPs are viewable on GitHub. This means that Markdown features
   not supported by GitHub, such as footnotes, should be avoided.
-  <!-- XXX: Perhaps we should abandon this and only require them to be
-  readable in some rendered format. That would allow us to use MathJAX, which
-  could be useful. -->
 - Any references to other SymPEPs should be written as internal links, e.g.,
   [SymPEP 1](SymPEP-0001).
 - Images or diagrams may be included in the SymPEP if they improve the
@@ -133,3 +130,5 @@ Some extra notes about writing a SymPEP:
   possible. Note that images should only be included when they significantly
   improve the discussion in the SymPEP. The vast majority of SymPEPs should
   not include images.
+- All sections in the template are not necessarily required, but are
+  encouraged. Including them will help you succeed with your proposal.
