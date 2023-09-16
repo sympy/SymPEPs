@@ -61,12 +61,12 @@ The SymPEP process and corresponding documents serve several purposes:
 Importantly, **a SymPEP is not documentation** for the proposed change. End
 user documentation should be included with the implementation of the feature in
 the corresponding SymPy documentation. This also means that other documentation
-should not rely on cross-referencing a SymPEP as if it were documentation for a
-feature. Even technical discussion of a feature should be documented separately
-from a SymPEP. The reason is that SymPEPs will necessarily include details that
-are irrelevant to the final implementation, such as discussions of alternate
-implementations which were rejected and discussions of implementation of the
-change.
+should not rely primarily on cross-referencing a SymPEP as if it were
+documentation for a feature. Even technical discussion of a feature should be
+documented separately from a SymPEP. The reason is that SymPEPs will
+necessarily include details that are irrelevant to the final implementation,
+such as discussions of alternate implementations which were rejected and
+discussions of implementation of the change.
 
 ## SymPEP Workflow
 
