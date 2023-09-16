@@ -8,7 +8,7 @@
 
 ## Abstract
 
-SymPEPs are a formal process whereby important changes are proposed and
+SymPEPs are a semi-formal process whereby important changes are proposed and
 discussed. Corresponding to each SymPEP is a document that outlines the
 proposed change(s), the discussion around those changes, and motivation for
 that change. This document outlines the details of the SymPEP process and
@@ -16,7 +16,7 @@ corresponding documents.
 
 ## What is a SymPEP?
 
-SymPEP stands for "SymPy Enhancement Proposal". SymPEPs represent a formal
+SymPEP stands for "SymPy Enhancement Proposal". SymPEPs represent a semi-formal
 process whereby important changes are proposed and discussed in the SymPy
 community. Corresponding to each SymPEP is a SymPEP document which outlines the
 proposal and corresponding discussion. SymPEPs are based on the
@@ -72,8 +72,8 @@ change.
 
 Discussions around a proposed change typically begin informally on the mailing
 list or SymPy issue/pull-request tracker. However, once it is decided that the
-formal SymPEP process is desired for a change, the discussion should move to
-the [SymPEP repository](https://github.com/sympy/SymPEPs) on GitHub.
+SymPEP process is desired for a change, the discussion should move to the
+[SymPEP repository](https://github.com/sympy/SymPEPs) on GitHub.
 
 Not all significant changes or additions to SymPy require a SymPEP. If the
 change would benefit from extended discussion or needs a roadmap for
