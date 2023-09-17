@@ -1,7 +1,7 @@
 # SymPEP 1 --- SymPEP Purpose and Process
 
 **Author** Aaron Meurer, Jason K. Moore  
-**Status** Draft  
+**Status** Accepted  
 **Type** Process  
 **Created** 2021-01-27  
 **Resolution**  
